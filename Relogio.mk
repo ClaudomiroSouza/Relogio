@@ -5,8 +5,8 @@
 ## Debug
 ProjectName            :=Relogio
 ConfigurationName      :=Debug
-WorkspacePath          := "C:\Program Files (x86)\CodeLite\ProgII"
-ProjectPath            := "C:\Users\Cssj\Documents\ProjetosProgII\Relogio"
+WorkspacePath          := "C:\Users\Cssj\Documents\ProjetosProgII\PrimeiraAval"
+ProjectPath            := "C:\Users\Cssj\Documents\ProjetosProgII\PrimeiraAval\Relogio"
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -91,7 +91,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Cssj/Documents/ProjetosProgII/Relogio/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Cssj/Documents/ProjetosProgII/PrimeiraAval/Relogio/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM "main.cpp"
 
@@ -108,6 +108,6 @@ clean:
 	$(RM) ./Debug/*$(DependSuffix)
 	$(RM) $(OutputFile)
 	$(RM) $(OutputFile).exe
-	$(RM) "../../../../../Program Files (x86)/CodeLite/ProgII/.build-debug/Relogio"
+	$(RM) "../.build-debug/Relogio"
 
 
