@@ -63,7 +63,7 @@ AS       := C:/MinGW-4.8.1/bin/as.exe
 ##
 CodeLiteDir:=C:\Program Files (x86)\CodeLite
 UNIT_TEST_PP_SRC_DIR:=C:\UnitTest++-1.3
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Relogio.cpp$(ObjectSuffix) 
 
 
 
@@ -97,6 +97,14 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
+
+$(IntermediateDirectory)/Relogio.cpp$(ObjectSuffix): Relogio.cpp $(IntermediateDirectory)/Relogio.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Cssj/Documents/ProjetosProgII/PrimeiraAval/Relogio/Relogio.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Relogio.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Relogio.cpp$(DependSuffix): Relogio.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Relogio.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Relogio.cpp$(DependSuffix) -MM "Relogio.cpp"
+
+$(IntermediateDirectory)/Relogio.cpp$(PreprocessSuffix): Relogio.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Relogio.cpp$(PreprocessSuffix) "Relogio.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
